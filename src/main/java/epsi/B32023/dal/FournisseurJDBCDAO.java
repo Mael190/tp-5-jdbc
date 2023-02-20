@@ -19,7 +19,7 @@ public class FournisseurJDBCDAO implements FournisseurDAO{
     static {
         ResourceBundle bundle = ResourceBundle.getBundle( "db" );
         DB_URL = bundle.getString( "db.url" );
-        DB_USER = bundle.getString( "db.user" );
+        DB_USER = bundle.getString( "db.login" );
         DB_PWD = bundle.getString( "db.password" );
     }
 

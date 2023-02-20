@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aea3acce-dfa4-423a-aa65-956254a9d755" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/TestInsertion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/bo/Fournisseur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/dal/FournisseurDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/dal/FournisseurJDBCDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/test/TestDelete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/test/TestFindAll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/test/TestInsertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/test/TestUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/epsi/B32023/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/epsi/B32023/TestInsertion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/epsi/B32023/bo/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/bo/Fournisseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/epsi/B32023/dal/FournisseurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/dal/FournisseurDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/epsi/B32023/dal/FournisseurJDBCDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/epsi/B32023/dal/FournisseurJDBCDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <workItem from="1674543943327" duration="187000" />
       <workItem from="1674630654227" duration="2701000" />
       <workItem from="1676916322713" duration="10000" />
-      <workItem from="1676919278204" duration="5091000" />
+      <workItem from="1676919278204" duration="7427000" />
     </task>
     <servers />
   </component>

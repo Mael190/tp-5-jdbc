@@ -1,6 +1,13 @@
 package epsi.B32023;
 
+import epsi.B32023.bo.Fournisseur;
+import epsi.B32023.test.TestDelete;
+import epsi.B32023.test.TestFindAll;
+import epsi.B32023.test.TestInsertion;
+import epsi.B32023.test.TestUpdate;
+
 import java.sql.*;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Main {
@@ -18,19 +25,20 @@ public class Main {
     public static void main(String[] args) {
         try (Connection cnx = DriverManager.getConnection(DB_URL, DB_LOGIN, DB_PWD);
              Statement st = cnx.createStatement();) {
+            
+            TestInsertion test1 = new TestInsertion();
+            test1.Insert(new Fournisseur("La maison de la peinture"));
 
+            TestUpdate test2= new TestUpdate();
+            test2.Update(new Fournisseur(1, "La maison de la peinture"), new Fournisseur("La cabane de la peinture"));
 
+            TestFindAll test3 = new TestFindAll();
+            List<Fournisseur> listFournisseurs = test3.FindAll();
+            System.out.println(listFournisseurs.size());
 
-            try (ResultSet rs = st.executeQuery("SELECT * FROM compta.FOURNISSEUR")) {
-                while (rs .next()) {
-                    System.out.printf("id = %d - nom ou alors %d - nom = %s %n",
-                            rs.getInt(1),
-                            rs.getInt("ID"),
-                            rs.getString("NOM"));
-                }
-            }
-            TestInsertion test1 = new TestInsertion(cnx, st);
-            test1.Insert("La Maison de la Peinture");
+            TestDelete test4= new TestDelete();
+            test4.Delete(1);
+
 
 
         } catch (SQLException e) {
