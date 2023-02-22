@@ -6,7 +6,7 @@ import java.util.List;
 import java.sql.SQLException;
 
 public interface FournisseurDAO {
-    void add(Fournisseur fournisseur) throws SQLException;
+    int add(Fournisseur fournisseur) throws SQLException;
     List<Fournisseur> findAll() throws SQLException;
 
     void update(Fournisseur oldFournisseur, Fournisseur newFournisseur) throws SQLException;

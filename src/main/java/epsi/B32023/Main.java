@@ -1,10 +1,9 @@
 package epsi.B32023;
 
 import epsi.B32023.bo.Fournisseur;
-import epsi.B32023.test.TestDelete;
-import epsi.B32023.test.TestFindAll;
-import epsi.B32023.test.TestInsertion;
-import epsi.B32023.test.TestUpdate;
+import epsi.B32023.dal.ArticleJDBCDAO;
+import epsi.B32023.dal.FournisseurJDBCDAO;
+import epsi.B32023.test.*;
 
 import java.sql.*;
 import java.util.List;
@@ -22,10 +21,11 @@ public class Main {
         DB_LOGIN = bundle.getString("db.login");
         DB_PWD= bundle.getString("db.password");
     }
-    public static void main(String[] args) {
+
+    public static void tp1() {
         try (Connection cnx = DriverManager.getConnection(DB_URL, DB_LOGIN, DB_PWD);
              Statement st = cnx.createStatement();) {
-            
+
             TestInsertion test1 = new TestInsertion();
             test1.Insert(new Fournisseur("La maison de la peinture"));
 
@@ -38,13 +38,26 @@ public class Main {
 
             TestDelete test4= new TestDelete();
             test4.Delete(1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public static void tp6() {
+        try (Connection cnx = DriverManager.getConnection(DB_URL, DB_LOGIN, DB_PWD);
+             Statement st = cnx.createStatement();) {
 
-
+            TestJdbcArticles test = new TestJdbcArticles(new FournisseurJDBCDAO(), new ArticleJDBCDAO());
+            test.insert();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Hello world! 👉");
+    }
+    public static void main(String[] args) {
+        tp1();
+        tp6();
+
+
     }
 }

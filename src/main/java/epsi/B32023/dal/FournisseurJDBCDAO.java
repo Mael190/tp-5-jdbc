@@ -43,11 +43,18 @@ public class FournisseurJDBCDAO implements FournisseurDAO{
         return fournisseurs;
     }
     @Override
-    public void add(Fournisseur fournisseur) throws SQLException {
+    public int add(Fournisseur fournisseur) throws SQLException {
         try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_USER, DB_PWD );
-              PreparedStatement ps = cnx.prepareStatement(INSERT_QUERY)) {
+              PreparedStatement ps = cnx.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, fournisseur.getNom());
             ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            int lastInsertedId = 0;
+            if(rs.next())
+            {
+                lastInsertedId = rs.getInt(1);
+            }
+            return lastInsertedId;
         }
     }
     @Override
@@ -56,6 +63,7 @@ public class FournisseurJDBCDAO implements FournisseurDAO{
               PreparedStatement ps = cnx.prepareStatement(UPDATE_QUERY)) {
             ps.setString(1, newFournisseur.getNom());
             ps.setString(2, Integer.toString(oldFournisseur.getId()));
+            ps.executeUpdate();
         }
     }
 
@@ -63,6 +71,7 @@ public class FournisseurJDBCDAO implements FournisseurDAO{
         try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_USER, DB_PWD );
               PreparedStatement ps = cnx.prepareStatement(DELETE_ID_QUERY)) {
             ps.setString(1, String.valueOf(fournisseurId));
+            ps.executeUpdate();
         }
     }
 }
